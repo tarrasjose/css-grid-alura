@@ -1,0 +1,101 @@
+.caixa {
+    align-items: flex-end;
+    display: flex;
+    justify-content: center;
+}
+
+.destaques {
+    display: grid;
+    grid-gap: .2rem; /*Espaçamento entre as imagens*/
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-rows: 33.33% 33.33% 33.33%;
+    height: calc(100vh - 50px);
+}
+
+.destaques__titulo {
+    background: rgba(0, 0, 0, .5);
+    color: #fdfdfd;
+    padding: .6rem;
+    text-align: center;
+    width: 100%;
+}
+
+.destaques__principal {
+    background-image: url('../img/fortnite.jpg');
+    background-position: top; /*primeiro centralizei a imagem, depois mudei para top, pois estava cortando a cabeça dependendo do tamanho da tela*/
+    background-repeat: no-repeat; 
+    background-size: cover; /*Vamos dizer que a imagem deve ocupar todo o background*/
+    /*Se quisermos que a imagem vá até a terceira coluna, temos que colocar para ele ir até a quarta*/
+    grid-row-start: 1;
+    grid-row-end: 3; /*Se quisermos que a imagem vá até a segunda linha, temos que colocar para ela ir até a terceira*/
+}
+
+.destaques__secundario:nth-child(2) {
+    background: url('../img/pubg.jpg') center / cover no-repeat;
+    /*
+    background-image: url('../img/pubg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;*/
+
+    /*
+    grid-column-start: 4;
+    grid-column-end: 4;*/
+   
+    /*
+    grid-row-start: 1;
+    grid-row-end: 1;*/
+}
+
+.destaques__secundario:nth-child(3) {
+    background-image: url('../img/slack.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.destaques__secundario:nth-child(4) {
+    background-image: url('../img/whatsapp.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.destaques__secundario:nth-child(5) {
+    background-image: url('../img/cs-go.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+   
+}
+
+.destaques__categorias {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 3;
+}
+
+.destaques__categorias___lista {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    justify-content: space-between;
+}
+
+.destaques__categorias___item {
+    align-items: center;
+    background: #fdfdfd;
+    border-left: 5px solid transparent;
+    color: #333333;
+    display: flex;
+    padding: 1rem;
+    width: 50%;
+}
+
+.destaques__categorias___link {
+    color: inherit; /*O color vai herdar a cor do pai*/
+}
+
